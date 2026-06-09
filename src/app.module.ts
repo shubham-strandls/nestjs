@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { PostHogModule } from './posthog/posthog.module';
 import { TransactionModule } from './common/transaction/transaction.module';
 import { UsersModule } from './users/users.module';
 
@@ -15,6 +16,7 @@ import { UsersModule } from './users/users.module';
         uri: config.get<string>('MONGODB_URI'),
       }),
     }),
+    PostHogModule,
     TransactionModule,
     UsersModule,
   ],

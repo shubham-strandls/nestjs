@@ -5,7 +5,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostHogModule } from './posthog/posthog.module';
 import { TransactionModule } from './common/transaction/transaction.module';
+import { SqsModule } from './common/sqs/sqs.module';
 import { UsersModule } from './users/users.module';
+import { OrdersModule } from './orders/orders.module';
+import { InventoryModule } from './inventory/inventory.module';
 
 @Module({
   imports: [
@@ -18,7 +21,10 @@ import { UsersModule } from './users/users.module';
     }),
     PostHogModule,
     TransactionModule,
+    SqsModule,
     UsersModule,
+    OrdersModule,
+    InventoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
